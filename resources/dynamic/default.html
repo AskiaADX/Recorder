@@ -1,0 +1,28 @@
+<div id="adc_{%= CurrentADC.InstanceId %}" class="adc-default">
+    {% If CurrentQuestion.Type = "open" Then
+
+	Dim placeholder = CurrentADC.PropValue("placeholder")
+	Dim attrPlaceholder = On(placeholder <> "", "placeholder=\"" + placeholder + "\"", "")
+	Dim attrRequired = On(CurrentQuestion.IsAllowDK, "required=\"required\"", "")
+    Dim startVal = ""
+
+%}
+    <h1> MediaRecorder API example</h1>
+
+    <p>Record ADC</p>
+    <div id='btns'>
+      <button  class="btn btn-default" id='start'>Start</button>
+      <button  class="btn btn-default" id='stop'>Stop</button>
+    </div>
+    <div>
+      <ul  class="list-unstyled" id='ul'></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script src="default.js"></script>
+{%
+	
+EndIf %}
+</div>
+
+
